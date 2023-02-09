@@ -1,7 +1,7 @@
 
 <template>
-	<SuperInput v-model:data="CardCode" />
-	<SuperInput v-model:data="CardCode" />
+	<SuperInput v-model="CardCode" />
+	<SuperInput v-model="CardCode" />
 	<input v-model="CardCode" />
 	<input v-model="CardCode" />
 </template>

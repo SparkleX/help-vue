@@ -1,5 +1,5 @@
 <template>
-	<input v-bind:value="data" v-on:input="onChange" />
+	<input type="text" v-bind:value="modelValue" v-on:input="onChange" />
 </template>
 <style scoped>
 input {
@@ -13,10 +13,10 @@ input {
 
 <script>
 export default {
-	props: ["data"],
+	props: ["modelValue"],
 	methods: {
 		onChange(event) {
-			this.$emit("update:data", event.target.value);
+			this.$emit("update:modelValue", event.target.value);
 		}
 	},
 }
