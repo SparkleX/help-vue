@@ -1,17 +1,10 @@
 <template>
-	<v-text-field :label="label" :modelValue="modelValue" @input="onChange" ></v-text-field>
+	<v-radio :label="label" :modelValue="modelValue"></v-radio>
 </template>
   
-<script setup>
-//
-</script>
+
 <script>
 export default {
-	props: ["modelValue", "label"],
-	methods: {
-		onChange(event) {
-			this.$emit("update:modelValue", event.target.value);
-		}
-	}
+	props: ["modelValue", "label"]
 }
 </script>  

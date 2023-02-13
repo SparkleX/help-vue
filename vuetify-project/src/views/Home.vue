@@ -38,7 +38,17 @@
 				</v-window-item>
 
 				<v-window-item value="two">
-					Two
+					<SuperRadioGroup v-model="radio">
+						<SuperRadio label="中文1" value="1"/>
+						<SuperRadio label="Radio 2" value="2"/>
+						<SuperRadio label="Radio 3" value="3"/>
+					  </SuperRadioGroup>
+					  <v-radio-group inline  v-model="radio">
+						<SuperRadio label="中文1" value="1"></SuperRadio>
+						<v-radio label="Radio 2" value="2"></v-radio>
+						<v-radio label="Radio 3" value="3"></v-radio>
+					  </v-radio-group>
+					  <v-text-field label="Label" v-model="radio"></v-text-field>
 				</v-window-item>
 
 				<v-window-item value="three">
@@ -66,7 +76,8 @@ import SuperButton from '@/control/SuperButton.vue'
 export default {
 	data() {
 		return {
-			tab: null,
+			radio:"1",
+			tab: "two",
 			CardCode: "abc",
 			CardType: "S",
 			Active: "N",

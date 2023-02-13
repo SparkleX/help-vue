@@ -1,16 +1,16 @@
 <template>
-	<v-text-field :label="label" :modelValue="modelValue" @input="onChange" ></v-text-field>
+	<v-radio-group inline :modelValue="modelValue" v-on:update:modelValue="onUpdateModelValue">
+		<slot></slot>
+	</v-radio-group>
 </template>
   
-<script setup>
-//
-</script>
+
 <script>
 export default {
-	props: ["modelValue", "label"],
+	props: ["modelValue"],
 	methods: {
-		onChange(event) {
-			this.$emit("update:modelValue", event.target.value);
+		onUpdateModelValue(value) {
+			this.$emit("update:modelValue", value);
 		}
 	}
 }
