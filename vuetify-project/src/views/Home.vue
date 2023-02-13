@@ -2,7 +2,7 @@
 
 
 	<v-card>
-		<v-tabs  v-model="tab" color="primary">
+		<v-tabs v-model="tab" color="primary">
 			<v-tab value="one">Item One</v-tab>
 			<v-tab value="two">Item Two</v-tab>
 			<v-tab value="three">Item Three</v-tab>
@@ -11,13 +11,30 @@
 		<v-card-text>
 			<v-window v-model="tab">
 				<v-window-item value="one">
-					<v-text-field label="Label" v-model="Active"></v-text-field>
-					<v-text-field label="Label" v-model="Active"></v-text-field>
-					<SuperInput label="BP Code" v-model="CardCode" />
-					<SuperComboBox label="BP Type" v-model="CardType" :items="_items"/>
-					<SuperCheckBox label="Active" v-model="Active" valueChecked="Y" valueUnchecked="N"/>
-					<SuperCheckBox label="Active" v-model="Active" valueChecked="Y" valueUnchecked="N"/>
-					<SuperButton label="Click Me" @click="onClick"/>
+							<v-row>
+								<v-col cols="12" md="6">
+									<v-text-field label="Label" v-model="Active"></v-text-field>
+									<v-text-field label="Label" v-model="Active"></v-text-field>
+									<SuperInput label="BP Code" v-model="CardCode" />
+									<SuperComboBox label="BP Type" v-model="CardType" :items="_items" />
+									<SuperCheckBox label="Active" v-model="Active" valueChecked="Y"
+										valueUnchecked="N" />
+									<SuperCheckBox label="Active" v-model="Active" valueChecked="Y"
+										valueUnchecked="N" />
+									<SuperButton label="Click Me" @click="onClick" />
+								</v-col>
+								<v-col cols="12" md="6">
+									<v-text-field label="Label" v-model="Active"></v-text-field>
+									<v-text-field label="Label" v-model="Active"></v-text-field>
+									<SuperInput label="BP Code" v-model="CardCode" />
+									<SuperComboBox label="BP Type" v-model="CardType" :items="_items" />
+									<SuperCheckBox label="Active" v-model="Active" valueChecked="Y"
+										valueUnchecked="N" />
+									<SuperCheckBox label="Active" v-model="Active" valueChecked="Y"
+										valueUnchecked="N" />
+									<SuperButton label="Click Me" @click="onClick" />
+								</v-col>
+							</v-row>
 				</v-window-item>
 
 				<v-window-item value="two">
@@ -49,7 +66,7 @@ import SuperButton from '@/control/SuperButton.vue'
 export default {
 	data() {
 		return {
-      		tab: null,
+			tab: null,
 			CardCode: "abc",
 			CardType: "S",
 			Active: "N",
