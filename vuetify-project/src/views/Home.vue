@@ -1,6 +1,7 @@
 <template>
-
-
+	<v-row justify="end"  no-gutters>
+			<SuperButton label="Edit" @click="onClick" />
+	</v-row>
 	<v-card>
 		<v-tabs v-model="tab" color="primary">
 			<v-tab value="one">Item One</v-tab>
@@ -22,6 +23,8 @@
 									<SuperCheckBox label="Active" v-model="Active" valueChecked="Y"
 										valueUnchecked="N" />
 									<SuperButton label="Click Me" @click="onClick" />
+									<SuperButton label="Click Me" @click="onClick" />
+
 								</v-col>
 								<v-col cols="12" md="6">
 									<v-text-field label="Label" v-model="Active"></v-text-field>
@@ -52,12 +55,16 @@
 				</v-window-item>
 
 				<v-window-item value="three">
-					Three
+					<SuperDataTable>
+
+					</SuperDataTable>
 				</v-window-item>
 			</v-window>
 		</v-card-text>
 	</v-card>
-
+    <v-footer class="bg-grey-lighten-1">
+		<SuperButton color="primary" label="Click Me" @click="onClick" />
+	</v-footer>
 
 </template>
 
@@ -68,7 +75,7 @@ import SuperCheckBox from '@/control/SuperCheckBox.vue'
 import SuperRadioGroup from '@/control/SuperRadioGroup.vue'
 import SuperRadio from '@/control/SuperRadio.vue'
 import SuperButton from '@/control/SuperButton.vue'
-
+import SuperDataTable from '@/control/SuperDataTable.vue'
 </script>
 
 
@@ -76,8 +83,8 @@ import SuperButton from '@/control/SuperButton.vue'
 export default {
 	data() {
 		return {
-			radio:"1",
-			tab: "two",
+			radio: "1",
+			tab: "three",
 			CardCode: "abc",
 			CardType: "S",
 			Active: "N",
@@ -90,4 +97,5 @@ export default {
 		}
 	}
 }
+
 </script>

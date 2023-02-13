@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar color="primary">
+  <v-app-bar color="primary" flat>
     <v-app-bar-title>
       <v-icon icon="mdi-circle-slice-4" />
 

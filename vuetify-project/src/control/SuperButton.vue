@@ -1,11 +1,11 @@
 <template>
-	<v-btn color="primary" v-on:click="onClick">{{label}}</v-btn>
+	<v-btn :color="color" v-on:click="onClick">{{label}}</v-btn>
 </template>
   
 
 <script>
 export default {
-	props: ["label"],
+	props: ["label","color"],
     emits: ['click'],
     methods: {
 		onClick(event) {
