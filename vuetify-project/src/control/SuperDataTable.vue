@@ -1,11 +1,10 @@
 <template>
 
   <v-data-table
-    v-model:items-per-page="itemsPerPage"
+    :items-per-page="-1"
     :headers="headers"
     :items="desserts"
     item-value="name"
-    class="elevation-1"
   ></v-data-table>
 </template>
   
@@ -14,7 +13,6 @@
 export default {
   data() {
     return {
-      itemsPerPage: 5,
       headers: [
         {
           title: 'Dessert (100g serving)',
