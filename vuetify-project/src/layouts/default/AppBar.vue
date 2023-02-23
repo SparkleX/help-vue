@@ -41,12 +41,13 @@ export default {
 	},
 	methods: {
 		onMenuSelect(evt) {
-			switch(evt.id) {
+			switch (evt.id) {
 				case "OCRD":
-					this.$router.push('/About')
+				case "OITM":
+				case "ORDR":
+					this.$router.push(`/${evt.id}`)
 					break;
-				case "OITM":break;
-				case "ORDR":break;
+
 			}
 		}
 	}
