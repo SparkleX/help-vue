@@ -27,6 +27,14 @@
 				</v-dialog>
 			</v-toolbar>
 		</template>
+		<template v-slot:item.actions="{ item }">
+			<v-icon size="small" class="me-2" @click="editItem(item.raw)">
+				mdi-pencil
+			</v-icon>
+			<v-icon size="small" @click="deleteItem(item.raw)">
+				mdi-delete
+			</v-icon>
+		</template>
 	</v-data-table>
 </template>
   
@@ -54,6 +62,17 @@ export default {
 				//this.desserts.push(this.editedItem)
 			}
 			this.close()
+		},
+		editItem(item) {
+			//this.editedIndex = this.desserts.indexOf(item)
+			//this.editedItem = Object.assign({}, item)
+			this.dialog = true
+		},
+		deleteItem(item) {
+			alert(item);
+			//this.editedIndex = this.desserts.indexOf(item)
+			//this.editedItem = Object.assign({}, item)
+			//this.dialogDelete = true
 		},
 	}
 }

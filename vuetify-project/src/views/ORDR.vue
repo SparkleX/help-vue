@@ -82,7 +82,8 @@ export default {
 				Table1: [
 					{ title: '#', align: 'start', key: 'LineNum', sortable: false },
 					{ title: 'Item No.', align: 'start', key: 'ItemCode', sortable: false },
-					{ title: 'Qty', align: 'end', key: 'Qty', sortable: false }
+					{ title: 'Qty', align: 'end', key: 'Qty', sortable: false },
+					{ title: 'Actions', key: 'actions', align: 'end', sortable: false },
 				],
 				codes:{
 					CardType: [{ value: 'C', desc: 'Customer' }, { value: 'S', desc: 'Vendor' }, { value: 'L', desc: 'Leads' }],
