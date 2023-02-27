@@ -51,8 +51,30 @@
 				</v-window-item>
 
 				<v-window-item value="three">
-					<SuperDataTable :items="data.DOC1" :headers="ui.Table1">
-
+					<SuperDataTable :items="data.DOC1" :headers="ui.Table1" @delete-row="tableDeleteRow">
+						<template v-slot:detail>
+							<v-dialog v-model="dialog" max-width="500px">
+								<template v-slot:activator="{ props }">
+									<v-btn color="primary" v-bind="props">
+										+ New
+									</v-btn>
+								</template>
+								<v-card>
+									<v-card-title>
+										<span class="text-h5">Title</span>
+									</v-card-title>
+									<v-card-actions>
+										<v-spacer></v-spacer>
+										<v-btn color="primary" variant="text" @click="tableDetailClose">
+											OK
+										</v-btn>
+										<v-btn variant="text" @click="tableDetailClose">
+											Cancel
+										</v-btn>
+									</v-card-actions>
+								</v-card>
+							</v-dialog>
+						</template>
 					</SuperDataTable>
 				</v-window-item>
 			</v-window>
@@ -78,6 +100,7 @@ import SuperDataTable from '@/control/SuperDataTable.vue'
 export default {
 	data() {
 		return {
+			dialog: false,
 			ui: {
 				Table1: [
 					{ title: '#', align: 'start', key: 'LineNum', sortable: false },
@@ -85,7 +108,7 @@ export default {
 					{ title: 'Qty', align: 'end', key: 'Qty', sortable: false },
 					{ title: 'Actions', key: 'actions', align: 'end', sortable: false },
 				],
-				codes:{
+				codes: {
 					CardType: [{ value: 'C', desc: 'Customer' }, { value: 'S', desc: 'Vendor' }, { value: 'L', desc: 'Leads' }],
 				}
 			},
@@ -126,7 +149,26 @@ export default {
 			const str = JSON.stringify(this.$data.data);
 			console.debug(str);
 			alert(str);
-		}
+		},
+		tableDetailClose() {
+			this.dialog = false
+			this.$nextTick(() => {
+				this.editedItem = Object.assign({}, this.defaultItem)
+				this.editedIndex = -1
+			})
+		},
+		tableDetailSave() {
+			if (this.editedIndex > -1) {
+				//Object.assign(this.desserts[this.editedIndex], this.editedItem)
+			} else {
+				//this.desserts.push(this.editedItem)
+			}
+			this.close()
+		},
+		tableDeleteRow(data) {
+			//this.dialog = true
+			alert(JSON.stringify(data));
+		},
 	}
 }
 

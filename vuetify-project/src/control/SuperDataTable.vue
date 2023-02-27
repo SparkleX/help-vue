@@ -4,6 +4,8 @@
 			<v-toolbar flat>
 				<v-toolbar-title>Details</v-toolbar-title>
 				<v-spacer></v-spacer>
+				<slot name="detail"></slot>
+				<!--	
 				<v-dialog v-model="dialog" max-width="500px">
 					<template v-slot:activator="{ props }">
 						<v-btn color="primary" v-bind="props">
@@ -25,13 +27,14 @@
 						</v-card-actions>
 					</v-card>
 				</v-dialog>
+				-->
 			</v-toolbar>
 		</template>
 		<template v-slot:item.actions="{ item }">
-			<v-icon size="small" class="me-2" @click="editItem(item.raw)">
+			<v-icon size="small" @click="editRow(item.raw)">
 				mdi-pencil
 			</v-icon>
-			<v-icon size="small" @click="deleteItem(item.raw)">
+			<v-icon size="small" @click="deleteRow(item.raw)">
 				mdi-delete
 			</v-icon>
 		</template>
@@ -42,6 +45,7 @@
 <script>
 export default {
 	props: ["items", "headers"],
+	emits: ["deleteRow","editRow"],
 	data() {
 		return {
 			dialog: false
@@ -63,13 +67,15 @@ export default {
 			}
 			this.close()
 		},
-		editItem(item) {
+		editRow(item) {
 			//this.editedIndex = this.desserts.indexOf(item)
 			//this.editedItem = Object.assign({}, item)
-			this.dialog = true
+			//this.dialog = true
+			this.$emit("editRow", item);
 		},
-		deleteItem(item) {
-			alert(item);
+		deleteRow(item) {
+			//alert(item);
+			this.$emit("deleteRow", item);
 			//this.editedIndex = this.desserts.indexOf(item)
 			//this.editedItem = Object.assign({}, item)
 			//this.dialogDelete = true
