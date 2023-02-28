@@ -1,5 +1,5 @@
 <template>
-	<v-text-field :label="label" :modelValue="modelValue" @input="onChange" ></v-text-field>
+	<v-text-field :label="label" :modelValue="modelValue" @input="onChange" hide-details></v-text-field>
 </template>
   
 <script setup>

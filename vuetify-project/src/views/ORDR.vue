@@ -83,10 +83,10 @@
 						</template>
 						<template v-slot:rows="{ item }">
 							<td>{{ item.LineNum }}</td>
-							<td>
+							<td style="padding-left: 0px;padding-right: 0px;">
 								<SuperInput type="text" v-model="item.ItemCode" />
 							</td>
-							<td>
+							<td style="padding-left: 0px;padding-right: 0px;">
 								<SuperInput type="text" v-model="item.Qty" />
 							</td>
 							<td class="text-right"> <v-icon size="small" @click="tableDeleteRow(a)">
@@ -115,10 +115,14 @@ import SuperRadioGroup from '@/control/SuperRadioGroup.vue'
 import SuperRadio from '@/control/SuperRadio.vue'
 import SuperButton from '@/control/SuperButton.vue'
 import SuperDataTable from '@/control/SuperDataTable.vue'
+import { useAppStore } from '@/store/app.js'
+
+//alert(store);
 </script>
 
 
 <script>
+const store = useAppStore();
 export default {
 	data() {
 		return {
@@ -162,9 +166,10 @@ export default {
 	},
 	methods: {
 		onClick(event) {
+			store.increment();
 			const str = JSON.stringify(this.$data.data);
 			console.debug(str);
-			alert(str);
+			//alert(str);
 		},
 		tableDetailClose() {
 			this.dialog = false
