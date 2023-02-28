@@ -81,12 +81,14 @@
 							<th class="text-left">Qty</th>
 							<th class="text-right">Actions</th>
 						</template>
-						<template v-slot:rows="a">
-							<td>{{ a.LineNum }}</td>
-							<td><SuperInput label="" v-model="a.ItemCode" />
-								<SuperInput label="" v-model="a.ItemCode" />
+						<template v-slot:rows="{ item }">
+							<td>{{ item.LineNum }}</td>
+							<td>
+								<SuperInput type="text" v-model="item.ItemCode" />
 							</td>
-							<td>{{ a.Qty }}</td>
+							<td>
+								<SuperInput type="text" v-model="item.Qty" />
+							</td>
 							<td class="text-right"> <v-icon size="small" @click="tableDeleteRow(a)">
 									mdi-pencil
 								</v-icon>

@@ -11,13 +11,17 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr v-for="item in items" :key="item.ItemCode">
-				<slot name="rows" v-bind="item"></slot>
+			<tr v-for="(item, index) in items">
+				<slot name="rows" v-bind="{item}"></slot>
 			</tr>
 		</tbody>
 	</v-table>
 </template>
-  
+
+<script setup>
+import SuperInput from '@/control/SuperInput.vue'
+</script>
+
 
 <script>
 export default {
