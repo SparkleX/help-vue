@@ -51,7 +51,7 @@
 				</v-window-item>
 
 				<v-window-item value="three">
-					<SuperDataTable :items="data.DOC1" :headers="ui.Table1" @delete-row="tableDeleteRow">
+					<SuperDataTable v-model:items="data.DOC1" :headers="ui.Table1" @delete-row="tableDeleteRow">
 						<template v-slot:detail>
 							<v-dialog v-model="dialog" max-width="500px">
 								<template v-slot:activator="{ props }">
@@ -74,6 +74,26 @@
 									</v-card-actions>
 								</v-card>
 							</v-dialog>
+						</template>
+						<template v-slot:columns>
+							<th class="text-left">#</th>
+							<th class="text-left">Item No.</th>
+							<th class="text-left">Qty</th>
+							<th class="text-right">Actions</th>
+						</template>
+						<template v-slot:rows="a">
+							<td>{{ a.LineNum }}</td>
+							<td><SuperInput label="" v-model="a.ItemCode" />
+								<SuperInput label="" v-model="a.ItemCode" />
+							</td>
+							<td>{{ a.Qty }}</td>
+							<td class="text-right"> <v-icon size="small" @click="tableDeleteRow(a)">
+									mdi-pencil
+								</v-icon>
+								<v-icon size="small" @click="tableDeleteRow(a)">
+									mdi-delete
+								</v-icon>
+							</td>
 						</template>
 					</SuperDataTable>
 				</v-window-item>
@@ -102,12 +122,6 @@ export default {
 		return {
 			dialog: false,
 			ui: {
-				Table1: [
-					{ title: '#', align: 'start', key: 'LineNum', sortable: false },
-					{ title: 'Item No.', align: 'start', key: 'ItemCode', sortable: false },
-					{ title: 'Qty', align: 'end', key: 'Qty', sortable: false },
-					{ title: 'Actions', key: 'actions', align: 'end', sortable: false },
-				],
 				codes: {
 					CardType: [{ value: 'C', desc: 'Customer' }, { value: 'S', desc: 'Vendor' }, { value: 'L', desc: 'Leads' }],
 				}

@@ -1,51 +1,28 @@
 <template>
-	<v-data-table :items-per-page="-1" :headers="headers" :items="items" item-value="name">
-		<template v-slot:top>
-			<v-toolbar flat>
-				<v-toolbar-title>Details</v-toolbar-title>
-				<v-spacer></v-spacer>
-				<slot name="detail"></slot>
-				<!--	
-				<v-dialog v-model="dialog" max-width="500px">
-					<template v-slot:activator="{ props }">
-						<v-btn color="primary" v-bind="props">
-							+ New
-						</v-btn>
-					</template>
-					<v-card>
-						<v-card-title>
-							<span class="text-h5">Title</span>
-						</v-card-title>
-						<v-card-actions>
-							<v-spacer></v-spacer>
-							<v-btn color="primary" variant="text" @click="save">
-								OK
-							</v-btn>
-							<v-btn variant="text" @click="close">
-								Cancel
-							</v-btn>
-						</v-card-actions>
-					</v-card>
-				</v-dialog>
-				-->
-			</v-toolbar>
-		</template>
-		<template v-slot:item.actions="{ item }">
-			<v-icon size="small" @click="editRow(item.raw)">
-				mdi-pencil
-			</v-icon>
-			<v-icon size="small" @click="deleteRow(item.raw)">
-				mdi-delete
-			</v-icon>
-		</template>
-	</v-data-table>
+	<v-toolbar flat>
+		<v-toolbar-title>Details</v-toolbar-title>
+		<v-spacer></v-spacer>
+		<slot name="detail"></slot>
+	</v-toolbar>
+	<v-table fixed-header height="300px">
+		<thead>
+			<tr>
+				<slot name="columns"></slot>
+			</tr>
+		</thead>
+		<tbody>
+			<tr v-for="item in items" :key="item.ItemCode">
+				<slot name="rows" v-bind="item"></slot>
+			</tr>
+		</tbody>
+	</v-table>
 </template>
   
 
 <script>
 export default {
 	props: ["items", "headers"],
-	emits: ["deleteRow","editRow"],
+	emits: ["deleteRow", "editRow"],
 	data() {
 		return {
 			dialog: false
