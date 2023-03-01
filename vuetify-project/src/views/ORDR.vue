@@ -14,6 +14,7 @@
 				<v-window-item value="one">
 					<v-row>
 						<v-col cols="12" md="6">
+							{{ $t('message.hello', ['hello']) }}
 							<v-text-field label="Label" v-model="data.Active"></v-text-field>
 							<v-text-field label="Label" v-model="data.Active"></v-text-field>
 							<SuperInput label="BP Code" v-model="data.CardCode" />
