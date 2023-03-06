@@ -1,34 +1,38 @@
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
-ctx.translate(500.5, 500.5)
-
+ctx.translate(400.5, 400.5);
+//ctx.transform(1, 0.5, -0.5, 1, 30, 10);
+//ctx.scale(100, 100);
 function lineTo(x, y) {
-  	ctx.lineTo(x * 100, - y * 100);
+  ctx.lineTo(x * 100, -y * 100);
+  //ctx.lineTo(x, -y);
 }
 function moveTo(x, y) {
-	ctx.moveTo(x * 100, - y * 100);
+  ctx.moveTo(x * 100, -y * 100);
+  //ctx.moveTo(x, -y);
 }
 
-ctx.strokeStyle = 'green';
-for(let x = -4.0;x<4.1;x=x+0.1) {
-	moveTo(x, -4.0);
-	lineTo(x, 4);
+ctx.strokeStyle = "#afffaf";
+for (let x = -4.0; x < 4.1; x = x + 0.1) {
+  moveTo(x, -4.0);
+  lineTo(x, 4);
 }
-for(let y = -4.0;y<4.1;y=y+0.1) {
-	moveTo(-4, y);
-	lineTo(4, y);
+for (let y = -4.0; y < 4.1; y = y + 0.1) {
+  moveTo(-4, y);
+  lineTo(4, y);
 }
 
 ctx.stroke();
 
 ctx.beginPath();
-ctx.font = "20px Arial";
+ctx.font = "15px Tahoma";
 for (let x = -4; x < 3.1; x = x + 1) {
-	ctx.fillText(x, x * 100, 20);
+  ctx.fillText(x, x * 100 - 5 + ((x==0)?5:0), 15);
 }
-  
-for (let y = -3; y < 4.1; y = y + 1) {
-	ctx.fillText(y, 0, - y * 100 + 20);
+
+for (let y = -3; y < 3.1; y = y + 1) {
+  if (y == 0) continue;
+  ctx.fillText(y, 10, -y * 100 + 5);
 }
 
 ctx.strokeStyle = "red";
@@ -38,12 +42,22 @@ moveTo(-4, 0);
 lineTo(4, 0);
 moveTo(0, -4);
 lineTo(0, 4);
-moveTo(3.8, 0.1);
+
+moveTo(3.9, 0.05);
 lineTo(4, 0);
-lineTo(3.8, -0.1);
-moveTo(0.1, 3.8);
+lineTo(3.9, -0.05);
+moveTo(0.05, 3.9);
 lineTo(0, 4);
-lineTo(-0.1, 3.8);
+lineTo(-0.05, 3.9);
+
+for (let x = -3.9; x < 3.9; x = x + 0.1) {
+  moveTo(x, 0);
+  lineTo(x, 0.05);
+}
+for (let y = -3.9; y < 3.9; y = y + 0.1) {
+  moveTo(0, y);
+  lineTo(0.05, y);
+}
 ctx.stroke();
 
 ctx.strokeStyle = "blue";
