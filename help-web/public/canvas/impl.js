@@ -1,15 +1,12 @@
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 ctx.translate(400.5, 400.5);
-//ctx.transform(1, 0.5, -0.5, 1, 30, 10);
-//ctx.scale(100, 100);
+
 function lineTo(x, y) {
   ctx.lineTo(x * 100, -y * 100);
-  //ctx.lineTo(x, -y);
 }
 function moveTo(x, y) {
   ctx.moveTo(x * 100, -y * 100);
-  //ctx.moveTo(x, -y);
 }
 
 ctx.strokeStyle = "#afffaf";
