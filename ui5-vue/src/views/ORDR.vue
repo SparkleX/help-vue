@@ -1,15 +1,5 @@
-
-
 <template>
-	<ui5-page id="page" background-design="List" style="height: 98vh" floating-footer show-footer>
-		<ui5-shellbar id="shellbar" primary-title="SAP Business One" secondary-title="Sales Orders"
-			notifications-count="99+" show-product-switch slot="header">
-			<ui5-li slot="menuItems">Application 1</ui5-li>
-			<ui5-li slot="menuItems">Application 2</ui5-li>
-			<ui5-li slot="menuItems">Application 3</ui5-li>
-			<ui5-li slot="menuItems">Application 4</ui5-li>
-			<ui5-li slot="menuItems">Application 5</ui5-li>
-		</ui5-shellbar>
+	<ui5-page id="page" background-design="List" style="height: 500px" floating-footer show-footer>
 		<ui5-tabcontainer>
 			<ui5-tab text="General" selected>
 				<div class="form">
@@ -21,7 +11,7 @@
 						</div>
 					</div>
 					<div class="form-element">
-						<ui5-label id="myLabel" class="grid-item" for="myInput"  required show-colon>First name</ui5-label>
+						<ui5-label id="myLabel" class="grid-item" for="myInput" required show-colon>First name</ui5-label>
 						<super-input v-model="a" class="grid-item"></super-input>
 					</div>
 					<div class="form-element">
@@ -60,23 +50,10 @@
 <script setup>
 import SuperInput from '../controls/SuperInput.vue'
 import SuperButton from '../controls/SuperButton.vue'
-//alert(store);
 </script>
 
+
 <script>
-export default {
-	data() {
-		return {
-			a: "100"
-		}
-	},
-	methods: {
-		onClick(event) {
-			alert("1");
-		},
-		update(event) {
-			this.a = event.target.value;
-		}
-	}
-}
+
+
 </script>

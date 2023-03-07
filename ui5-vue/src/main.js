@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import router from './router'
 import './style.css'
 import App from './App.vue'
 import "@ui5/webcomponents/dist/Assets.js";
@@ -23,4 +24,6 @@ import "@ui5/webcomponents-icons/dist/AllIcons.js";
 
 import { setTheme } from "@ui5/webcomponents-base/dist/config/Theme.js";
 setTheme("sap_fiori_3");
-createApp(App).mount('#app')
+const app = createApp(App);
+app.use(router);
+app.mount('#app')
