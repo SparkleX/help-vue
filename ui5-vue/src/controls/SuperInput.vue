@@ -1,5 +1,5 @@
 <template>
-	<ui5-input :value="modelValue" @input="onChange"></ui5-input>
+	<ui5-input :value="modelValue" @input="onChange"  style="width: 100%"></ui5-input>
 </template>
 
 <script>
