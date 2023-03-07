@@ -1,20 +1,24 @@
 * {
 	box-sizing: border-box;
-  }
+}
+
 body {
 	margin: 0px;
 }
+
 .form {
 	display: inline-grid;
 	grid-template-columns: auto;
 	width: 50%;
 	float: left;
 }
+
 .form-element {
 	display: inline-grid;
 	grid-template-columns: 1fr 2fr;
 	padding: 0.5rem;
 }
+
 .grid-item {
 	display: flex;
 	justify-content: center;
