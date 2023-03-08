@@ -13,50 +13,37 @@
 
 		<ui5-tabcontainer>
 			<ui5-tab text="General" selected>
-				<ui5-dynamic-side-content equal-split>
-					<div>
-						<h1>Main Content</h1>
-						<div>
-							<div>
-								<ui5-label id="myLabel"  for="myInput" required show-colon>First
-									name</ui5-label>
-								<div>
-									<ui5-input id="myInput"  required
-										placeholder="Enter your name"></ui5-input>
-									<ui5-input id="myInput"  required
-										placeholder="Enter your name"></ui5-input>
-								</div>
-							</div>
-							<div>
-								<ui5-label id="myLabel"  for="myInput" required show-colon>First
-									name</ui5-label>
-								<super-input v-model="a" ></super-input>
-							</div>
-							<div>
-								<ui5-label id="myLabel"  for="myInput" required show-colon>First
-									name</ui5-label>
-								<super-input v-model="a" ></super-input>
-							</div>
-							<div>
-								<super-button label="Test" @click="onClick"></super-button>
-							</div>
+				<div class="form">
+					<div class="form-element">
+						<ui5-label id="myLabel" for="a1" required show-colon>First name</ui5-label>
+						<div >
+							<ui5-input class="flex2" id="a1" required placeholder="Enter your name"></ui5-input>
+							<ui5-input class="flex2" id="a2" required placeholder="Enter your name"></ui5-input>
 						</div>
 					</div>
-					<div slot="sideContent">
-						<h1>Side Content</h1>
+					<div class="form-element">
+						<ui5-label id="myLabel" for="myInput" required show-colon>First
+							name</ui5-label>
+						<super-input v-model="a"></super-input>
+					</div>
+					<div class="form-element">
+						<ui5-label id="myLabel" for="myInput" required show-colon>First
+							name</ui5-label>
+						<super-input v-model="a"></super-input>
+					</div>
+					<div class="form-element">
+						<super-button label="Test" @click="onClick"></super-button>
+					</div>
+				</div>
+				<div class="form">
+					<div class="form-element">
+						<ui5-label required show-colon>Right</ui5-label>
 						<div>
-							<ui5-label  required show-colon>Right</ui5-label>
-							<div>
-								<ui5-input id="myInput"  required
-									placeholder="Enter your name"></ui5-input>
-								<ui5-input id="myInput"  required
-									placeholder="Enter your name"></ui5-input>
-							</div>
+							<ui5-input class="flex2" id="myInput1" required placeholder="Enter your name"></ui5-input>
+							<ui5-input class="flex2" id="myInput2" required placeholder="Enter your name"></ui5-input>
 						</div>
 					</div>
-				</ui5-dynamic-side-content>
-
-
+				</div>
 			</ui5-tab>
 			<ui5-tab text="Details"></ui5-tab>
 			<ui5-tab text="Address"></ui5-tab>

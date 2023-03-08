@@ -1,6 +1,7 @@
+
 * {
-	box-sizing: border-box;
-}
+/*box-sizing:border-box;*/
+} 
 
 body {
 	margin: 0px;
@@ -9,18 +10,30 @@ body {
 .form {
 	display: inline-grid;
 	grid-template-columns: auto;
-	width: 50%;
-	float: left;
 }
-
-.form-element {
+.flex2 {
 	display: inline-grid;
-	grid-template-columns: 1fr 2fr;
-	padding: 0.5rem;
+}
+@media only screen and (max-width: 800px) {
+	.form  {
+		width: 100%;
+	}
+	.flex2 {
+		width: 100%;
+	}
 }
 
-.grid-item {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+@media only screen and (min-width: 801px) {
+	.form  {
+		width: 50%;
+	}
+	.form-element {
+		display: inline-grid;
+		grid-template-columns: 1fr 3fr;
+		padding: 0rem;
+	}
+	.flex2 {
+		width: 50%;
+	}
+
 }
