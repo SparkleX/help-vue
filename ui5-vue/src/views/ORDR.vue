@@ -11,10 +11,10 @@
 		</ui5-bar>
 		<ui5-label>Business Partner</ui5-label>
 
-		<ui5-tabcontainer >
+		<ui5-tabcontainer>
 			<ui5-tab text="General" selected>
-				<div class="page" >
-					<div class="form" >
+				<div class="page">
+					<div class="form">
 						<div class="form-element">
 							<ui5-label id="myLabel" for="a1" required show-colon>First name</ui5-label>
 							<div class="flex2">
@@ -43,6 +43,22 @@
 								<ui5-input class="flex2-content" id="myInput1" required style="min-width: 0;"></ui5-input>
 								<ui5-input class="flex2-content" id="myInput2" required style="min-width: 0;"></ui5-input>
 							</div>
+						</div>
+						<div class="form-element">
+							<ui5-label show-colon>Document Date</ui5-label>
+							<ui5-date-picker id="myDatepicker1"></ui5-date-picker>
+						</div>
+						<div class="form-element">
+							<ui5-label show-colon>Document Status</ui5-label>
+							<ui5-checkbox text="Chocolate" checked></ui5-checkbox>
+						</div>
+						<div class="form-element">
+							<ui5-label id="test" show-colon>Document Status</ui5-label>
+							<ui5-select class="select" style="width:100%">
+								<ui5-option icon="iphone">Phone</ui5-option>
+								<ui5-option icon="ipad">Tablet</ui5-option>
+								<ui5-option icon="laptop" selected>Desktop</ui5-option>
+							</ui5-select>
 						</div>
 					</div>
 				</div>

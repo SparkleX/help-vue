@@ -14,6 +14,10 @@ import "@ui5/webcomponents/dist/Panel";
 import "@ui5/webcomponents/dist/TabContainer";
 import "@ui5/webcomponents/dist/Tab";
 import "@ui5/webcomponents/dist/TabSeparator";
+import "@ui5/webcomponents/dist/DatePicker";
+import "@ui5/webcomponents/dist/CheckBox";
+import "@ui5/webcomponents/dist/Select";
+
 import "@ui5/webcomponents-fiori/dist/Page.js";
 import "@ui5/webcomponents-fiori/dist/Bar.js";
 import "@ui5/webcomponents-fiori/dist/ShellBar.js";
