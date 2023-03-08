@@ -2,38 +2,54 @@
 * {
 /*box-sizing:border-box;*/
 } 
-
+/*ui5-input {
+    min-width: 0;
+}*/
 body {
 	margin: 0px;
 }
 
-.form {
+.page {
+	display: inline-grid;
+	width: 100%;
+	row-gap: 1rem;
+	column-gap: 1rem;
+}
+.form  {
 	display: inline-grid;
 	grid-template-columns: auto;
+	row-gap: 0.5rem;
 }
 .flex2 {
 	display: inline-grid;
+	grid-template-columns: auto auto;
+	column-gap: 0.5rem;
+}
+.flex2-content {
+	width: 100%;
 }
 @media only screen and (max-width: 800px) {
-	.form  {
-		width: 100%;
+	.page  {
+		grid-template-columns: 1fr;
 	}
-	.flex2 {
-		width: 100%;
+	.form-element {
+		display: inline-grid;
+		grid-template-columns: 1fr;
+		padding: 0rem;
 	}
 }
 
 @media only screen and (min-width: 801px) {
-	.form  {
-		width: 50%;
+	.page  {
+		grid-template-columns: 1fr 1fr;
 	}
 	.form-element {
 		display: inline-grid;
 		grid-template-columns: 1fr 3fr;
 		padding: 0rem;
 	}
-	.flex2 {
-		width: 50%;
-	}
-
 }
+
+
+/* fix UI5*/
+
