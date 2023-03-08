@@ -1,11 +1,8 @@
 
 * {
-	/*text-align: center;*/
-/*box-sizing:border-box;*/
+	align-items:center;
 } 
-/*ui5-input {
-    min-width: 0;
-}*/
+
 body {
 	margin: 0px;
 }

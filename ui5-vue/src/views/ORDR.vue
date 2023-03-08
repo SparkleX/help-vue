@@ -9,8 +9,6 @@
 			<ui5-button slot="endContent">New</ui5-button>
 			<ui5-button slot="endContent">Delete</ui5-button>
 		</ui5-bar>
-		<ui5-label>Business Partner</ui5-label>
-
 		<ui5-tabcontainer>
 			<ui5-tab text="General" selected>
 				<div class="page">
