@@ -6,6 +6,16 @@
 	<style>
 		* {
 			box-sizing: border-box;
+			
+		}
+
+		:root {
+			--main-bg-color: pink;
+			--div-margin: 20px;
+		}
+
+		body {
+			background-color: var(--main-bg-color);
 		}
 
 		.row::after {
@@ -16,7 +26,6 @@
 
 		[class*="col-"] {
 			float: left;
-			padding: 15px;
 		}
 
 		html {
@@ -64,52 +73,13 @@
 			width: 100%;
 			height: 3rem;
 			border-radius: 8px;
-			margin: 2px;
 		}
 
 		/* For desktop: */
-		.col-1 {
-			width: 8.33%;
-		}
-
-		.col-2 {
-			width: 16.66%;
-		}
-
-		.col-3 {
-			width: 25%;
-		}
-
-		.col-4 {
-			width: 33.33%;
-		}
-
-		.col-5 {
-			width: 41.66%;
-		}
 
 		.col-6 {
-			width: 50%;
-		}
-
-		.col-7 {
-			width: 58.33%;
-		}
-
-		.col-8 {
-			width: 66.66%;
-		}
-
-		.col-9 {
-			width: 75%;
-		}
-
-		.col-10 {
-			width: 83.33%;
-		}
-
-		.col-11 {
-			width: 91.66%;
+			width: calc(50% - var(--div-margin) * 2);
+			margin: var(--div-margin) var(--div-margin) var(--div-margin) var(--div-margin);
 		}
 
 		.col-12 {
@@ -118,7 +88,7 @@
 
 		@media only screen and (max-width: 500px) {
 			[class*="col-"] {
-				width: 100%;
+				width: calc(100% - var(--div-margin)*2);
 			}
 		}
 	</style>
@@ -132,14 +102,29 @@
 
 	<div class="row">
 		<div class="col-6 menu">
-			<div class="item">Card Code</div>
+			<div class="item">Block1</div>
 			<div class="item"><input class='input' /></div>
-			<div class="item">Card Code</div>
+			<div class="item">Block1</div>
 			<div class="item"><input class='input' /></div>
-			<div class="item">Card Code</div>
+			<div class="item">Block1</div>
 			<div class="item"><input class='input' /><input class='input' /></div>
 		</div>
-
+		<div class="col-6 menu">
+			<div class="item">Block2</div>
+			<div class="item"><input class='input' /></div>
+			<div class="item">Block2</div>
+			<div class="item"><input class='input' /></div>
+			<div class="item">Block2</div>
+			<div class="item"><input class='input' /><input class='input' /></div>
+		</div>
+		<div class="col-6 menu">
+			<div class="item">Block3</div>
+			<div class="item"><input class='input' /></div>
+			<div class="item">Block3</div>
+			<div class="item"><input class='input' /></div>
+			<div class="item">Block3</div>
+			<div class="item"><input class='input' /><input class='input' /></div>
+		</div>
 		<div class="col-6 right">
 			<div class="aside">
 				<h2>What?</h2>

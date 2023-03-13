@@ -117,7 +117,6 @@ import SuperRadio from '@/control/SuperRadio.vue'
 import SuperButton from '@/control/SuperButton.vue'
 import SuperDataTable from '@/control/SuperDataTable.vue'
 import { useAppStore } from '@/store/app.js'
-import { test } from 'decimal-utils'
 //alert(store);
 </script>
 
@@ -134,8 +133,6 @@ export default {
 				}
 			},
 			data: {
-				radio: "1",
-				tab: "three",
 				CardCode: "abc",
 				CardType: "S",
 				Active: "N",
@@ -167,8 +164,8 @@ export default {
 	},
 	methods: {
 		onClick(event) {
-			const rt = test(100,288);
-			alert(rt);
+			//const rt = test(100,288);
+			//alert(rt);
 			//store.increment();
 			//const str = JSON.stringify(this.$data.data);
 			//console.debug(str);

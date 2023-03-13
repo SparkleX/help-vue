@@ -4,7 +4,6 @@ class HelloWorld extends HTMLElement {
     this.name = 'World';
   }
   static get observedAttributes() {
-    //alert('observedAttributes');
     return ['name'];
   }
   attributeChangedCallback(property, oldValue, newValue) {
